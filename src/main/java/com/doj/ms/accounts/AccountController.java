@@ -25,19 +25,11 @@ public class AccountController {
 	AccountRepository accountRepository;
 	
 	@RequestMapping("/accounts")
-	@HystrixCommand(fallbackMethod = "getDataFallBack")
 	public Account[] all() {
 		logger.info("accounts-microservice all() invoked");
 		List<Account> accounts = accountRepository.getAllAccounts();
 		logger.info("accounts-microservice all() found: " + accounts.size());
 		return accounts.toArray(new Account[accounts.size()]);
-	}
-	public Account[] getDataFallBack() {
-		
-		Account acct[]={100,"karunakar",101};
-
-		return acct;
-		
 	}
 	
 	@RequestMapping("/accounts/{id}")
