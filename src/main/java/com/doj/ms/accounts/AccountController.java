@@ -38,13 +38,13 @@ public class AccountController {
 		List<Account> accounts = accountRepository.getAllAccounts();
 		
 		
-			 if(true){
+		/*	 if(true){
 				
 				System.out.println("Inside if..");
 				throw new ArithmeticException(); 
 			}
 			
-		
+		*/
 			System.out.println("Inside account Call.class...");
 		logger.info("accounts-microservice all() found: " + accounts.size());
 		return accounts.toArray(new Account[accounts.size()]);
